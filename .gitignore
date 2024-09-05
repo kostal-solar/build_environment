@@ -1,0 +1,7 @@
+build/cache
+build/tmp
+build/work
+build/conf
+bitbake*
+meta*
+poky

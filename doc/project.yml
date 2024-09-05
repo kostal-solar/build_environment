@@ -1,0 +1,70 @@
+header:
+  # The `version` entry in the header describes for which configuration
+  # format version this file was created for. It is used by kas to figure
+  # out if it is compatible with this file. The version is an integer that
+  # is increased on every format change.
+  version: 8
+  # The machine as it is written into the `local.conf` of bitbake.
+machine: "mx6ul-kie-inverter"
+# The distro name as it is written into the `local.conf` of bitbake.
+distro: "kostal"
+target: kie-image-base-swu
+repos:
+  # This entry includes the repository where the config file is located
+  # to the bblayers.conf:
+  meta-inverter-bsp:
+    url: "https://github.com/ruebe002/meta-inverter-bsp-os.git"
+    refspec: main
+  # Here we include a list of layers from the poky repository to the
+  # bblayers.conf:
+  poky:
+    url: "https://github.com/ruebe002/poky-os.git"
+    refspec: main
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp: exclude
+  meta-security:
+    url: "https://github.com/ruebe002/meta-security-os.git"
+    refspec: main
+  meta-openembedded:
+    url: "https://github.com/ruebe002/meta-openembedded-os.git"
+    refspec: main
+    layers:
+      meta-oe:
+      meta-filesystems:
+      meta-perl:
+      meta-python:
+      meta-networking:
+  meta-swupdate:
+    url: "https://github.com/ruebe002/meta-swupdate-os.git"
+    refspec: main
+  
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "1"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  kostal-opensource-project: |
+    PATCHRESOLVE = "noop"
+    #BB_NO_NETWORK = "1"
+    CONF_VERSION = "1"
+    DL_DIR ?= "${TOPDIR}/work/yocto_downloads"
+    SSTATE_DIR ?= "${TOPDIR}/work/sstate-cache"
+    PACKAGE_CLASSES ?= "package_ipk"
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+    USER_CLASSES ?= "buildstats"
+    PACKAGECONFIG:append_pn-qemu-native = " sdl"
+    PACKAGECONFIG:append_pn-nativesdk-qemu = " sdl"
+    INHERIT += "image-buildinfo"
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        ABORT,${TMPDIR},100M,1K \
+        ABORT,${DL_DIR},100M,1K \
+        ABORT,${SSTATE_DIR},100M,1K \
+        ABORT,/tmp,10M,1K"
