@@ -18,11 +18,9 @@ should work now...
 
 1. cd to your preffered location for cloning the repo and building the image
 2. git clone KOSTAL OS BUILD ENV from github
-3. cd build-environment
+3. cd build_environment
 
 4. kas shell doc/project.yml
 5. bitbake kie-image-base-swu
-or
-4. kas build doc/project.yml
 
 After building you find the image in build/tmp/deploy/images/mx6ul-kie-inverter/kie-image-base-swu-mx6ul-kie-inverter-$DATE&TIME$.swu
