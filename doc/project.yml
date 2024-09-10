@@ -13,22 +13,22 @@ repos:
   # This entry includes the repository where the config file is located
   # to the bblayers.conf:
   meta-inverter-bsp:
-    url: "https://github.com/ruebe002/meta-inverter-bsp-os.git"
+    url: "https://github.com/ruebesamkipv/meta-inverter-bsp-os.git"
     refspec: main
   # Here we include a list of layers from the poky repository to the
   # bblayers.conf:
   poky:
-    url: "https://github.com/ruebe002/poky-os.git"
+    url: "https://github.com/ruebesamkipv/poky-os.git"
     refspec: main
     layers:
       meta:
       meta-poky:
       meta-yocto-bsp: exclude
   meta-security:
-    url: "https://github.com/ruebe002/meta-security-os.git"
+    url: "https://github.com/ruebesamkipv/meta-security-os.git"
     refspec: main
   meta-openembedded:
-    url: "https://github.com/ruebe002/meta-openembedded-os.git"
+    url: "https://github.com/ruebesamkipv/meta-openembedded-os.git"
     refspec: main
     layers:
       meta-oe:
@@ -37,7 +37,7 @@ repos:
       meta-python:
       meta-networking:
   meta-swupdate:
-    url: "https://github.com/ruebe002/meta-swupdate-os.git"
+    url: "https://github.com/ruebesamkipv/meta-swupdate-os.git"
     refspec: main
   
 bblayers_conf_header:
@@ -49,7 +49,7 @@ bblayers_conf_header:
 local_conf_header:
   kostal-opensource-project: |
     PATCHRESOLVE = "noop"
-    #BB_NO_NETWORK = "1"
+    BB_NO_NETWORK = "1"
     CONF_VERSION = "1"
     DL_DIR ?= "${TOPDIR}/work/yocto_downloads"
     SSTATE_DIR ?= "${TOPDIR}/work/sstate-cache"
