@@ -1,4 +1,4 @@
-**COPYRIGHT (c) 2024 Kostal-Industrie-Elektrik GmbH & Co. KG**
+**COPYRIGHT (c) 2024 KOSTAL Solar Electric GmbH**
 
 Author: Markus Rübesam <m.ruebesam@kostal.com>
 
