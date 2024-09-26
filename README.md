@@ -24,7 +24,7 @@ Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
 
 ``git clone https://github.com/siemens/kas.git``
 
-``sudo pip3 install distro jsonschema kconfiglib PyYAML git``
+``sudo pip3 install distro jsonschema kconfiglib PyYAML``
 
 >*in case of errors using sudo and/or pip3 use following command:*
 >
@@ -40,7 +40,7 @@ Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
 
 ``cd to your preffered location for cloning the repo and building the image``
 
-``git clone https://github.com/kostal-industrie/build_environment.git``
+``git clone https://github.com/kostal-solar/build_environment.git``
 
 ``cd build_environment``
 
