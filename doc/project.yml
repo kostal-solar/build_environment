@@ -18,18 +18,18 @@ repos:
   # Here we include a list of layers from the poky repository to the
   # bblayers.conf:
   poky-os:
-    url: "https://github.com/kostal-solar/poky-os.git"
-    refspec: main
+    url: "https://github.com/yoctoproject/poky.git"
+    commit: df86cc15d0a39d8d85747f7acc2c887cccfd9fa7
     layers:
       meta:
       meta-poky:
       meta-yocto-bsp: exclude
   meta-security-os:
-    url: "https://github.com/kostal-solar/meta-security-os.git"
-    refspec: main
+    url: "git://git.yoctoproject.org/meta-security"
+    commit: eb631c12be585d18beddbb41f6035772b2cb17d5
   meta-openembedded-os:
-    url: "https://github.com/kostal-solar/meta-openembedded-os.git"
-    refspec: main
+    url: "git://git.openembedded.org/meta-openembedded"
+    commit: b8b0b06821d4d4df0cce4f07fa31a8ca1dd38f46
     layers:
       meta-oe:
       meta-filesystems:
@@ -37,8 +37,8 @@ repos:
       meta-python:
       meta-networking:
   meta-swupdate-os:
-    url: "https://github.com/kostal-solar/meta-swupdate-os.git"
-    refspec: main
+    url: "https://github.com/sbabic/meta-swupdate.git"
+    commit: 18a15193f968ced4579635534eac688be1fb5f0f
   
 bblayers_conf_header:
   standard: |
