@@ -51,3 +51,12 @@ Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
 >``bitbake kie-image-base-swu``
 >
 >After building you find the image in build/tmp/deploy/images/mx6ul-kie-inverter/kie-image-base-swu-mx6ul-kie-inverter-*DATE_&_TIME*.swu
+
+
+If you want/need to build without internet connection follow these steps:
+- Download the prefetched packages from ``https://github.com/kostal-solar/build_environment/``
+- unpack this file in your "build/work/" folder use ``xz -d yocto_downloads.tar.xz`` and ``tar -xvf ../yocto_downloads.tar``
+- doublecheck you should have "build/work/yocto_downloads/" which has various *.tar.gz packages
+- now comment out following line in "doc/project.yml" ``#BB_NO_NETWORK = "1"`` to ``BB_NO_NETWORK = "1"``
+- running kas again and invoking bitbake afterwards will now skip all fetch tasks and your build will work without internet connection
+
