@@ -14,7 +14,7 @@ repos:
   # to the bblayers.conf:
   meta-inverter-bsp-os:
     url: "https://github.com/kostal-solar/meta-inverter-bsp-os.git"
-    refspec: main
+    refspec: 1d927250bbd7a5731318b473150f5d5d8f078e94
   # Here we include a list of layers from the poky repository to the
   # bblayers.conf:
   poky-os:
