@@ -12,12 +12,12 @@ IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY C
 
 ## Build environment for Inverter User Interface embedded Linux (Yocto based) - Build instructions
 
-Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
+Setup tested with Ubuntu 22.04 LTS running @ WSL2 under Windows 11.
 
 ### Setup the build environment:
 ``sudo apt-get update``
 
-``sudo apt-get install git docker chrpath diffstat python3 python3-pip``
+``sudo apt-get install git docker chrpath diffstat python3 python3-pip liblz4-tool zstd ``
 
 ### Setup KAS:
 ``cd to your preferred kas folder for installing/downloading kas``
@@ -26,7 +26,7 @@ Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
 
 ``sudo pip3 install distro jsonschema kconfiglib PyYAML``
 
->*in case of errors using sudo and/or pip3 use following command:*
+>*in case of errors using sudo and/or pip3 try following command:*
 >
 >``pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip setuptools``
 
@@ -54,7 +54,7 @@ Setup tested with Ubuntu 18.04 LTS running @ WSL2 under Windows 11.
 
 
 If you want/need to build without internet connection follow these steps:
-- Download the prefetched packages from ``https://documents.kostal.com/Source%20Code/PLENTICORE_G3/yocto_downloads.tar.xz``
+- Download the prefetched packages (for latest release) from ``https://documents.kostal.com/Source%20Code/PLENTICORE_G3/yocto_downloads.tar.xz``
 - unpack this file in your "build/work/" folder use ``xz -d yocto_downloads.tar.xz`` and ``tar -xvf ../yocto_downloads.tar``
 - doublecheck you should have "build/work/yocto_downloads/" which has various *.tar.gz packages
 - now comment out following line in "doc/project.yml" ``#BB_NO_NETWORK = "1"`` to ``BB_NO_NETWORK = "1"``

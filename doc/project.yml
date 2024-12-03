@@ -3,7 +3,7 @@ header:
   # format version this file was created for. It is used by kas to figure
   # out if it is compatible with this file. The version is an integer that
   # is increased on every format change.
-  version: 8
+  version: 11
   # The machine as it is written into the `local.conf` of bitbake.
 machine: "mx6ul-kie-inverter"
 # The distro name as it is written into the `local.conf` of bitbake.
@@ -19,17 +19,17 @@ repos:
   # bblayers.conf:
   poky-os:
     url: "https://github.com/yoctoproject/poky.git"
-    commit: df86cc15d0a39d8d85747f7acc2c887cccfd9fa7
+    refspec: 65dafea22018052fe7b2e17e6e4d7eb754224d38
     layers:
       meta:
       meta-poky:
       meta-yocto-bsp: exclude
   meta-security-os:
     url: "git://git.yoctoproject.org/meta-security"
-    commit: eb631c12be585d18beddbb41f6035772b2cb17d5
+    refspec: b5642c519b90f83ab6ec1507db9b3b36db43c548
   meta-openembedded-os:
     url: "git://git.openembedded.org/meta-openembedded"
-    commit: b8b0b06821d4d4df0cce4f07fa31a8ca1dd38f46
+    refspec: 82c75b466e55d7dca7a2364986ecb704cf63d141
     layers:
       meta-oe:
       meta-filesystems:
@@ -38,11 +38,11 @@ repos:
       meta-networking:
   meta-swupdate-os:
     url: "https://github.com/sbabic/meta-swupdate.git"
-    commit: 18a15193f968ced4579635534eac688be1fb5f0f
+    refspec: kirkstone
   
 bblayers_conf_header:
   standard: |
-    POKY_BBLAYERS_CONF_VERSION = "1"
+    POKY_BBLAYERS_CONF_VERSION = "2"
     BBPATH = "${TOPDIR}"
     BBFILES ?= ""
 
@@ -51,7 +51,7 @@ local_conf_header:
     PATCHRESOLVE = "noop"
     #BB_NO_NETWORK = "1"
     BB_GENERATE_MIRROR_TARBALLS = "1"
-    CONF_VERSION = "1"
+    CONF_VERSION = "2"
     DL_DIR ?= "${TOPDIR}/work/yocto_downloads"
     SSTATE_DIR ?= "${TOPDIR}/work/sstate-cache"
     PACKAGE_CLASSES ?= "package_ipk"
