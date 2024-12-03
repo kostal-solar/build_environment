@@ -19,6 +19,8 @@ Setup tested with Ubuntu 22.04 LTS running @ WSL2 under Windows 11.
 
 ``sudo apt-get install git docker chrpath diffstat python3 python3-pip liblz4-tool zstd ``
 
+``sudo apt-get install -y locales locales-all``
+
 ### Setup KAS:
 ``cd to your preferred kas folder for installing/downloading kas``
 
